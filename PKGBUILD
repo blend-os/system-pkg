@@ -24,4 +24,7 @@ package() {
     install -Dm755 \
         "${pkgname%-git}" \
         -t "${pkgdir}"/usr/bin/
+    install -Dm755 user -t "${pkgdir}"/usr/lib/user/
+    cp -r user_modules "${pkgdir}"/usr/lib/user/
+    ln -s ../lib/user/user "${pkgdir}"/usr/bin/user
 }
